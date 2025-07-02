@@ -6,12 +6,16 @@ It calculates key turbidity metrics such as **NTU**, **red channel histogram**, 
 A professional **PDF report** is generated after analysis, complete with a color-coded turbidity bar and visual histogram.
 
 ---
+## 📸 Sample GUI
+| Window | Red Channel Histogram |
+| ![Sample](output/sample_output.png) | ![Histogram](assets/red_histogram_example.png) |
+---
 
-## 📸 Sample Output
+##  📊 Sample Output
 
 | Image | Red Channel Histogram |
 |-------|------------------------|
-| ![Sample](assets/sample_water.jpg) | ![Histogram](assets/red_histogram_example.png) |
+| ![Sample](output/sample_output.png) | ![Histogram](output/red_histogram.png) |
 
 ---
 
