@@ -7,15 +7,20 @@ A professional **PDF report** is generated after analysis, complete with a color
 
 ---
 ## 📸 Sample GUI
-Window 
- ![Sample](output/sample_tab.png)  
+### User Window
+![Original Sample](output/sample_tab.png)
 ---
 
 ##  📊 Sample Output
 
-| Image | Red Channel Histogram | Edge analysis|
-|-------|------------------------|
-| ![Sample](output/sample_output.png) | ![Histogram](output/red_histogram.png) | ![Histogram](output/edge_analysis.png) |
+### 🧪 Original Sample
+![Original Sample](output/sample_output.png)
+
+### 🔴 Red Channel Histogram
+![Red Channel Histogram](output/red_histogram.png)
+
+### ⚫ Edge Analysis
+![Edge Analysis](output/edge_analysis.png)
 
 ---
 
