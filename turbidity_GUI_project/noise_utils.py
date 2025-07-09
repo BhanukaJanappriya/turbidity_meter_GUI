@@ -23,5 +23,5 @@ def detect_salt_pepper_noise(gray):
 
 def apply_mean_filter_if_needed(gray):
     if detect_salt_pepper_noise(gray):
-        return cv2.blur(gray, (3, 3)), True
+        return cv2.medianblur(gray, (3, 3)), True
     return gray, False

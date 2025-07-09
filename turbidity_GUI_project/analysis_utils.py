@@ -3,15 +3,33 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+from noise_utils import remove_watermark_if_needed, apply_mean_filter_if_needed
+
 
 def preprocess_image(image_path):
     image = cv2.imread(image_path)
     if image is None:
         raise FileNotFoundError(f"Image not found at: {image_path}")
-    original = image.copy()
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-    return blurred, original
+    
+    # Watermark Removal (if present)
+    cleaned_image, watermark_removed = remove_watermark_if_needed(image)
+    
+    # Grayscale conversion
+    gray = cv2.cvtColor(cleaned_image, cv2.COLOR_BGR2GRAY)
+    
+    # Salt-and-pepper noise removal (if present)
+    denoised_gray, noise_removed = apply_mean_filter_if_needed(gray)
+    
+    # Gaussian blur for smoothing
+    blurred = cv2.GaussianBlur(denoised_gray, (5, 5), 0)
+
+    # print or log status
+    if watermark_removed:
+        print("[INFO] Watermark removed")
+    if noise_removed:
+        print("[INFO] Salt-and-pepper noise removed")
+
+    return blurred, cleaned_image
 
 def compute_intensity_metrics(image):
     return np.mean(image), np.var(image), np.min(image), np.max(image)
