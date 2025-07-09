@@ -18,6 +18,12 @@ def detect_watermark(gray):
     coverage = np.sum(mask > 0) / (mask.shape[0] * mask.shape[1])
     return coverage > 0.01, mask  # Apply only if more than 1% of image has watermark
 
+def remove_watermark_if_needed(image):
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    has_watermark, mask = detect_watermark(gray)
+    if has_watermark:
+        return cv2.inpaint(image, mask, 3, cv2.INPAINT_TELEA), True
+    return image, False
 
 def compute_intensity_metrics(image):
     return np.mean(image), np.var(image), np.min(image), np.max(image)
