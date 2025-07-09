@@ -25,6 +25,20 @@ def remove_watermark_if_needed(image):
         return cv2.inpaint(image, mask, 3, cv2.INPAINT_TELEA), True
     return image, False
 
+def detect_salt_pepper_noise(gray):
+    # Count extreme pixels
+    total_pixels = gray.size
+    black_pixels = np.sum(gray == 0)
+    white_pixels = np.sum(gray == 255)
+    noisy_ratio = (black_pixels + white_pixels) / total_pixels
+    return noisy_ratio > 0.01  # Only filter if more than 1% affected
+
+def apply_media_filter_if_needed(gray):
+    if detect_salt_pepper_noise(gray):
+        return cv2.medianBlur(gray, (3, 3)), True
+    return gray, False
+
+
 def compute_intensity_metrics(image):
     return np.mean(image), np.var(image), np.min(image), np.max(image)
 
