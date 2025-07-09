@@ -13,12 +13,6 @@ def preprocess_image(image_path):
     blurred = cv2.GaussianBlur(gray, (5, 5), 0)
     return blurred, original
 
-def detect_watermark(gray):
-    _, mask = cv2.threshold(gray, 240, 255, cv2.THRESH_BINARY)
-    coverage = np.sum(mask > 0) / (mask.shape[0] * mask.shape[1])
-    return coverage > 0.01, mask  # Apply only if more than 1% of image has watermark
-
-
 def compute_intensity_metrics(image):
     return np.mean(image), np.var(image), np.min(image), np.max(image)
 
