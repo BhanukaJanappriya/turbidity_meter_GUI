@@ -21,7 +21,7 @@ def detect_salt_pepper_noise(gray):
     noisy_ratio = (black_pixels + white_pixels) / total_pixels
     return noisy_ratio > 0.01  # Only filter if more than 1% affected
 
-def apply_mean_filter_if_needed(gray):
+def apply_median_filter_if_needed(gray):
     if detect_salt_pepper_noise(gray):
-        return cv2.medianblur(gray, (3, 3)), True
+        return cv2.medianBlur(gray, 3), True
     return gray, False
