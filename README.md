@@ -5,17 +5,10 @@
 ![Tkinter](https://img.shields.io/badge/Tkinter-GUI-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## 📌 Project Overview
-The **Water Turbidity Analysis System** is a sophisticated Python-based application designed to estimate water turbidity from digital images. By employing advanced image processing techniques, it provides a cost-effective and non-invasive alternative to traditional turbidimeters.
+## 📖 About
+A Python-based computer vision system that estimates water turbidity (NTU) from digital images. It combines red channel modeling, edge detection, and particle analysis to provide a cost-effective alternative to hardware turbidimeters, complete with a Tkinter GUI and automated PDF reporting.
 
-The system utilizes a multi-metric approach, including:
-- **Red Channel Analysis:** Utilizing a quadratic model to correlate red pixel intensity with NTU.
-- **Edge Density Mapping:** Applying Canny Edge Detection to quantify suspended particles.
-- **Statistical Intensity Metrics:** Analyzing pixel distribution (mean, variance, range) to characterize water clarity.
-- **Particle Distribution:** Performing connected component analysis for micro-level particle density estimation.
-
-## 🏷️ Tags
-`Python`, `OpenCV`, `Tkinter`, `Image Processing`, `Water Quality`, `Turbidity Analysis`, `Computer Vision`, `Data Visualization`, `PDF Reporting`, `Environmental Monitoring`
+**Tags:** `#Python` `#OpenCV` `#ComputerVision` `#WaterQuality` `#Turbidity` `#GUI` `#DataAnalysis` `#EnvironmentalTech`
 
 ---
 
