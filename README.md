@@ -1,48 +1,71 @@
 # 💧 Image-Based Water Turbidity Analysis System
 
-This project is a **Python GUI application** for analyzing water turbidity from images using **OpenCV** and **Tkinter**.  
-It calculates key turbidity metrics such as **NTU**, **red channel histogram**, **edge density**, and more.
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green.svg)
+![Tkinter](https://img.shields.io/badge/Tkinter-GUI-orange.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-A professional **PDF report** is generated after analysis, complete with a color-coded turbidity bar and visual histogram.
+## 📌 Project Overview
+The **Water Turbidity Analysis System** is a sophisticated Python-based application designed to estimate water turbidity from digital images. By employing advanced image processing techniques, it provides a cost-effective and non-invasive alternative to traditional turbidimeters.
 
----
-## 📸 Sample GUI
-### User Window
-![Original Sample](output/sample_tab.png)
----
+The system utilizes a multi-metric approach, including:
+- **Red Channel Analysis:** Utilizing a quadratic model to correlate red pixel intensity with NTU.
+- **Edge Density Mapping:** Applying Canny Edge Detection to quantify suspended particles.
+- **Statistical Intensity Metrics:** Analyzing pixel distribution (mean, variance, range) to characterize water clarity.
+- **Particle Distribution:** Performing connected component analysis for micro-level particle density estimation.
 
-##  📊 Sample Output
-
-### 🧪 Original Sample
-![Original Sample](output/sample_output.png)
-
-### 🔴 Red Channel Histogram
-![Red Channel Histogram](output/red_histogram.png)
-
-### ⚫ Edge Analysis
-![Edge Analysis](output/edge_analysis.png)
+## 🏷️ Tags
+`Python`, `OpenCV`, `Tkinter`, `Image Processing`, `Water Quality`, `Turbidity Analysis`, `Computer Vision`, `Data Visualization`, `PDF Reporting`, `Environmental Monitoring`
 
 ---
 
-## 🧠 Features
+## 📸 Sample GUI & Output
+### User Interface
+![GUI Sample](output/sample_tab.png)
 
-- Upload image of water sample
-- Analyze turbidity using red channel model and image features
-- Calculate:
-  - Average intensity
-  - Intensity variance
-  - Turbidity index
-  - Edge density
-  - Red channel histogram
-  - Final NTU value
-- Display histogram in a popup window
-- Generate **PDF report** with visuals and color-coded NTU bar
+### Analysis Results
+| Feature | Visualization |
+| :--- | :--- |
+| **Original Sample** | ![Original Sample](output/sample_output.png) |
+| **Red Channel Histogram** | ![Red Histogram](output/red_histogram.png) |
+| **Edge Analysis** | ![Edge Analysis](output/edge_analysis.png) |
 
 ---
 
-## 🔧 How to Run
+## 🧠 Core Features
+- **Intuitive GUI:** Built with Tkinter for easy image uploading and real-time feedback.
+- **Automated Preprocessing:** Includes watermark removal, noise reduction (Median Filter), and smoothing (Gaussian Blur).
+- **Advanced Metrics:**
+  - Average Intensity & Variance
+  - Turbidity Index
+  - Edge Density (Canny)
+  - Particle Count & Density
+  - Particle Uniformity
+- **Visual Analytics:** Generates red channel histograms and edge maps.
+- **Professional Reporting:** Automatically exports results into a detailed **PDF report** with color-coded NTU severity bars.
 
-### 1. Install Python dependencies
+---
 
+## 🔧 Installation & Setup
+
+### 1. Prerequisites
+Ensure you have Python 3.8+ installed.
+
+### 2. Install Dependencies
 ```bash
-pip install opencv-python numpy matplotlib reportlab
+pip install opencv-python numpy matplotlib reportlab scikit-image scipy
+```
+
+### 3. Run the Application
+```bash
+python turbidity_gui.py
+```
+
+---
+
+## 🛠️ Technologies Used
+- **OpenCV:** Core image processing and feature extraction.
+- **Tkinter:** Graphical User Interface.
+- **Matplotlib:** Data visualization and histogram plotting.
+- **ReportLab:** PDF report generation.
+- **NumPy/SciPy/Scikit-Image:** Numerical computing and advanced image analysis.
