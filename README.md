@@ -5,11 +5,6 @@
 ![Tkinter](https://img.shields.io/badge/Tkinter-GUI-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-## 📖 About
-A Python-based computer vision system that estimates water turbidity (NTU) from digital images. It combines red channel modeling, edge detection, and particle analysis to provide a cost-effective alternative to hardware turbidimeters, complete with a Tkinter GUI and automated PDF reporting.
-
-**Tags:** `#Python` `#OpenCV` `#ComputerVision` `#WaterQuality` `#Turbidity` `#GUI` `#DataAnalysis` `#EnvironmentalTech`
-
 ---
 
 ## 📸 Sample GUI & Output
